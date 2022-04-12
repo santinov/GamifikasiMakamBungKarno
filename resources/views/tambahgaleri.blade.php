@@ -1,22 +1,64 @@
-<div class="modal inmodal fade" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-xs">
-<form name="frm_add" id="frm_add" class="form-horizontal" action="{{route('simpandata')}}" method="POST" enctype="multipart/form-data">
-@csrf
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-<h4 class="modal-title">Tambah Data</h4>
-</div>
-<div class="modal-body">
-<div class="form-group"><label class="col-lg-2 control-label">Kelas</label>
-<div class="col-lg-10"><input type="text" name="kelas" placeholder="Kelas" class="form-control"></div>
-</div>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-white" data-dismiss="modal">Tutup</button>
-<button type="submit" class="btn btn-primary">Simpan</button>
-</div>
-</div>
-</form>
-</div>
-</div>
+@extends('layouts.adminlayout')
+
+@section('content')
+<div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <div class="card">
+            <div>
+              <div class="row">
+                <div class="col-8">
+                </div>
+                <div class="col-4 text-end">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="content">
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title">Tambah Galeri </h4>
+          </div>
+          <div class="card-body">
+            @if(session('status'))
+            <div class='alert alert-success'>
+              {{session('status')}}
+            </div>
+            @endif
+            <form method="POST" action="arsip" enctype="multipart/form-data">
+              @csrf
+
+              
+              <div class="form-group">
+                <label>Gambar</label>
+              </div>
+              <input type="file" class="form-control" name="gambar" accept="application/jpeg" required="">
+              <div class="form-group">
+              <label>Judul</label>
+                <input type="text" name="judul" class="form-control" required="">
+              </div>
+                <label>Keterangan</label>
+                <input type="text" name="keterangan" class="form-control" required="">
+              </div>
+              <div class="form-group">
+                <label>Tanggal Rilis</label>
+                <input type="date" name="tanggal_rilis" class="form-control" required="">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary">Save</button>
+                <a href="arsip" class="btn btn-primary btn-block">Back</a>
+              </div>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
+@endsection

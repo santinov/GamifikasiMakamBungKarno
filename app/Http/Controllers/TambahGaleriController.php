@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class TambahGaleriController extends Controller
 {
-    public function index()
-    {
-        return view('tambahgaleri');
-    }
+        public function index()
+        {
+            return view('tambahgaleri');
+        }
 }
