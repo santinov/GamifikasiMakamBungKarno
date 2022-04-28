@@ -23,7 +23,7 @@
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card z-index-2 h-100">
             <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Tambah Galeri</h6>
+              <h6 class="text-capitalize">Tambah </h6>
               <div class="ibox-tools">
                 <a href="tambahgaleri">
                 <button class="btn btn-primary btn-sm btn-flat" data-toggle="modal" data-target="#modal-add">
